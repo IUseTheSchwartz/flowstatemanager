@@ -1,0 +1,15 @@
+# File: netlify.toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+# Optional: ensure Node version
+[build.environment]
+  NODE_VERSION = "20"
+
+# SPA routing for React Router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
