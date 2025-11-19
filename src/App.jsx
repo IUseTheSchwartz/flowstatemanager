@@ -14,7 +14,6 @@ import TradeCenter from "./pages/TradeCenter.jsx";
 import ManagerDashboard from "./pages/ManagerDashboard.jsx";
 import ManagerImports from "./pages/ManagerImports.jsx";
 import ManagerLeads from "./pages/ManagerLeads.jsx";
-import ManagerMembers from "./pages/ManagerMembers.jsx";
 
 // Shell
 import Nav from "./components/Nav.jsx";
@@ -46,7 +45,6 @@ export default function App() {
           <Route path="/manager" element={<ManagerDashboard />} />
           <Route path="/manager/imports" element={<ManagerImports />} />
           <Route path="/manager/leads" element={<ManagerLeads />} />
-          <Route path="/manager/members" element={<ManagerMembers />} />
         </Route>
       </Route>
 
