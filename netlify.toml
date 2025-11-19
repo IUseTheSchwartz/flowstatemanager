@@ -4,7 +4,6 @@
   publish = "dist"
   functions = "netlify/functions"
 
-# Optional: ensure Node version
 [build.environment]
   NODE_VERSION = "20"
 
