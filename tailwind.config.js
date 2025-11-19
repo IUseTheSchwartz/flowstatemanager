@@ -7,7 +7,6 @@ export default {
   ],
   theme: {
     extend: {
-      // You can tweak brand colors here later if you want more Flow State flavor
       colors: {
         flow: {
           bg: "#05060a",
