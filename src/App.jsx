@@ -14,10 +14,6 @@ import TradeCenter from "./pages/TradeCenter.jsx";
 import ManagerDashboard from "./pages/ManagerDashboard.jsx";
 import ManagerImports from "./pages/ManagerImports.jsx";
 import ManagerLeads from "./pages/ManagerLeads.jsx";
-// We still import ManagerInvites, but if you're not using it, you can remove it from Nav/UI
-import ManagerInvites from "./pages/ManagerInvites.jsx";
-// If you removed ManagerMembers from the project, just delete this import + route
-// import ManagerMembers from "./pages/ManagerMembers.jsx";
 
 // Shell
 import Nav from "./components/Nav.jsx";
@@ -49,8 +45,8 @@ export default function App() {
           <Route path="/manager" element={<ManagerDashboard />} />
           <Route path="/manager/imports" element={<ManagerImports />} />
           <Route path="/manager/leads" element={<ManagerLeads />} />
-          <Route path="/manager/invites" element={<ManagerInvites />} />
-          {/* If you don't have this page/file, remove this line */}
+          {/* 👇 invites + members removed for Flow State */}
+          {/* <Route path="/manager/invites" element={<ManagerInvites />} /> */}
           {/* <Route path="/manager/members" element={<ManagerMembers />} /> */}
         </Route>
       </Route>
@@ -61,13 +57,11 @@ export default function App() {
   );
 
   return (
-    // 👇 force a dark, almost-black background on every page
-    <div className="min-h-screen bg-[#0b0b0c]">
+    <div className="min-h-screen bg-[#0b0b0c] text-[#e6e7ea]">
       {!hideNav && <Nav />}
 
-      {/* Center the app content for all "inside" pages */}
+      {/* Landing / Login / Signup full-width, rest centered */}
       {hideNav ? (
-        // Landing / Login / Signup can go full-width
         routes
       ) : (
         <div className="max-w-6xl mx-auto p-4">{routes}</div>
