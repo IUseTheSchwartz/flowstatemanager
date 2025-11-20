@@ -2,55 +2,43 @@
 import { Link } from "react-router-dom";
 
 export default function Landing() {
-  // TODO: replace with the real logo path (e.g. /flow-state-logo.png)
-  const logoSrc = "/flow-state-logo.png";
-
   return (
     <main className="min-h-screen flex items-center justify-center px-4">
-      <div className="max-w-lg w-full text-center space-y-8">
-        {/* Logo */}
-        <div className="flex justify-center">
-          <div className="inline-flex items-center justify-center">
-            <img
-              src={logoSrc}
-              alt="Flow State Financial"
-              className="h-24 w-auto sm:h-32 object-contain drop-shadow-[0_0_40px_rgba(59,130,246,0.45)]"
-              onError={(e) => {
-                // fallback simple text if logo not found yet
-                e.currentTarget.style.display = "none";
-              }}
-            />
-          </div>
-        </div>
-
-        {/* App name */}
-        <div className="space-y-2">
-          <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
+      <div className="w-full max-w-xl mx-auto text-center space-y-10">
+        {/* Title + tagline */}
+        <div className="space-y-3">
+          <p className="text-xs tracking-[0.35em] uppercase text-blue-400/80">
+            Flow State Financial
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-semibold">
             Flow State Financial Manager
           </h1>
-          <p className="text-sm sm:text-base text-white/70">
-            Central hub for Flow State Financial&apos;s leads, assignments, and
-            trades. Log in to manage your pipeline.
+          <p className="text-sm text-white/60">
+            Secure lead distribution and tracking for the Flow State team.
           </p>
         </div>
 
-        {/* Actions */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-          <Link to="/login" className="btn btn-primary w-full sm:w-40">
-            Log In
+        {/* Login / signup buttons (above logo) */}
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <Link to="/login" className="btn btn-primary w-full sm:w-auto">
+            Login
           </Link>
           <Link
             to="/signup"
-            className="btn w-full sm:w-40 border border-blue-500/60 bg-white/5 hover:bg-white/10 transition"
+            className="btn w-full sm:w-auto hover:bg-white/5 text-blue-300 border-blue-500/60"
           >
-            Sign Up
+            Sign up with invite code
           </Link>
         </div>
 
-        {/* Tiny footer text */}
-        <p className="text-[11px] text-white/40 pt-4">
-          Built for Flow State Financial agents &amp; managers.
-        </p>
+        {/* Big logo below buttons */}
+        <div className="mt-4">
+          <img
+            src="/flowstate-logo.png"
+            alt="Flow State Financial"
+            className="mx-auto max-w-xs sm:max-w-sm"
+          />
+        </div>
       </div>
     </main>
   );
