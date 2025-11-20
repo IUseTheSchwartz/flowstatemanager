@@ -5,7 +5,7 @@ export default function Landing() {
   return (
     <main className="min-h-screen flex items-center justify-center px-4 bg-black text-white">
       <div className="w-full max-w-xl mx-auto text-center space-y-8">
-        {/* Label + title */}
+        {/* Label + title + subtitle */}
         <div className="space-y-3">
           <p className="text-xs tracking-[0.35em] uppercase text-blue-400/80">
             Flow State Financial
@@ -13,9 +13,12 @@ export default function Landing() {
           <h1 className="text-3xl sm:text-4xl font-semibold">
             Flow State Financial Manager
           </h1>
+          <p className="text-sm text-white/60">
+            Secure lead distribution and tracking for the Flow State team.
+          </p>
         </div>
 
-        {/* BIG LOGO */}
+        {/* BIG LOGO (centered) */}
         <div>
           <img
             src="/flowstate-logo.png"
@@ -24,7 +27,7 @@ export default function Landing() {
           />
         </div>
 
-        {/* Buttons BELOW the logo */}
+        {/* Buttons under the logo */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center">
           <Link to="/login" className="btn btn-primary w-full sm:w-auto">
             Login
@@ -36,11 +39,6 @@ export default function Landing() {
             Sign up with invite code
           </Link>
         </div>
-
-        {/* Subtitle under buttons, tighter spacing */}
-        <p className="text-sm text-white/60">
-          Secure lead distribution and tracking for the Flow State team.
-        </p>
       </div>
     </main>
   );
