@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Landing() {
   return (
-    <main className="min-h-screen flex items-center justify-center px-4">
+    <main className="min-h-screen flex items-center justify-center px-4 bg-black text-white">
       <div className="w-full max-w-xl mx-auto text-center space-y-10">
         {/* Title + tagline */}
         <div className="space-y-3">
