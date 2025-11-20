@@ -8,9 +8,7 @@ export default function Nav() {
   const [authed, setAuthed] = useState(false);
   const loc = useLocation();
 
-  // For Flow State: only hide links on pure public screens
   const HIDE_LINKS_PATHS = new Set(["/", "/login", "/signup"]);
-
   const hideLinks = HIDE_LINKS_PATHS.has(loc.pathname);
 
   useEffect(() => {
@@ -60,18 +58,16 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="border-b border-white/10 bg-black/60 backdrop-blur">
+    <header className="border-b border-white/10 bg-black/40 backdrop-blur">
       <div className="max-w-6xl mx-auto flex items-center justify-between p-3">
         <Link to="/" className="flex items-center gap-3">
-          {/* TODO: drop your Flow State logo into /public and update filename if needed */}
+          {/* 👇 Make sure you have this file in /public as /flow-state-logo.png */}
           <img
             src="/flow-state-logo.png"
             alt="Flow State Financial"
-            className="h-8 w-8 rounded-sm object-contain"
+            className="h-8 w-auto"
           />
-          <span className="font-semibold tracking-tight">
-            Flow State Financial Manager
-          </span>
+          <span className="font-semibold">Flow State Financial Manager</span>
         </Link>
 
         {!hideLinks && (
@@ -88,6 +84,8 @@ export default function Nav() {
                 <Link to="/manager">Manager</Link>
                 <Link to="/manager/imports">Imports</Link>
                 <Link to="/manager/leads">All Leads</Link>
+                <Link to="/manager/invites">Invites</Link>
+                {/* If you don't have /manager/members, just leave it out */}
               </>
             )}
 
